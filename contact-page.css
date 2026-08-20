@@ -10,8 +10,8 @@
 .contact-page-actions .button{display:inline-flex;inline-size:8.25rem;block-size:3.35rem;padding:0 .9rem;border-radius:999px;justify-content:center;white-space:nowrap;font-size:1rem;font-weight:600;line-height:1}
 .contact-page-actions .contact-line-link{border:1px solid var(--green);background:var(--green);color:#fff;font-size:1rem;font-weight:600;line-height:1}
 .contact-desktop-break{display:block}
-.contact-page-illustration{width:min(100%,21rem);margin:0;align-self:center;justify-self:end;transform:translateY(.7rem);pointer-events:none}
-.contact-page-illustration img{display:block;width:100%;height:auto}
+.contact-page-illustration{display:block;width:min(100%,21rem);height:auto;max-height:none;margin:0;align-self:center;justify-self:end;overflow:visible;clip-path:none;transform:translateY(.7rem);pointer-events:none}
+.contact-page-illustration img{display:block;width:100%;height:auto;max-width:100%;max-height:none;object-fit:contain;overflow:visible;clip-path:none;transform:none}
 @media(max-width:760px){
   .contact-page .section-shell{width:min(100% - 2rem,44rem)}
   .contact-page-layout{grid-template-columns:1fr;row-gap:1rem}
