@@ -1,0 +1,226 @@
+/* Soma Development — Section 04 only. */
+#course-audience .soma-development-audience-interactive {
+  width: min(100%, 70rem);
+  margin-inline: auto;
+  text-align: center;
+}
+
+#course-audience .soma-development-audience-interactive .soma-audience-intro {
+  color: #477b99;
+  text-align: center;
+}
+
+#course-audience .soma-development-audience-interactive .soma-audience-list {
+  width: min(88%, 60rem);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .68rem 1rem;
+  margin: 1.45rem auto 0;
+  text-align: left;
+}
+
+#course-audience .soma-audience-choice {
+  display: flex;
+  box-sizing: border-box;
+  height: 5.9rem;
+  align-items: center;
+  gap: .85rem;
+  margin: 0;
+  padding: .46rem .78rem;
+  border: 1px solid rgba(71,123,153,.26);
+  border-radius: .9rem;
+  background: rgba(71,123,153,.025);
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+#course-audience .soma-audience-choice:hover,
+#course-audience .soma-audience-choice:focus-visible {
+  border-color: rgba(71,123,153,.55);
+  background: rgba(71,123,153,.05);
+}
+
+#course-audience .soma-audience-choice:focus-visible {
+  outline: 1px solid rgba(56,90,67,.68);
+  outline-offset: .24rem;
+}
+
+#course-audience .soma-audience-choice[aria-pressed="true"] {
+  border-color: rgba(71,123,153,.7);
+  background: rgba(71,123,153,.07);
+}
+
+#course-audience .soma-audience-choice .soma-audience-marker {
+  position: relative;
+  width: 1.22rem;
+  height: 1.22rem;
+  flex: 0 0 1.22rem;
+  margin: 0;
+  border: 1.65px solid rgba(71,123,153,.78);
+}
+
+#course-audience .soma-audience-choice .soma-audience-marker::after {
+  position: absolute;
+  inset: .25rem;
+  border-radius: 50%;
+  background: #477b99;
+  content: "";
+  opacity: 0;
+  transform: scale(.5);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+#course-audience .soma-audience-choice[aria-pressed="true"] .soma-audience-marker::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#course-audience .soma-audience-choice-copy {
+  display: grid;
+  gap: .16rem;
+  min-width: 0;
+}
+
+#course-audience .soma-audience-choice-copy strong {
+  display: inline-flex;
+  align-items: center;
+  gap: .24rem;
+  color: #477b99;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+#course-audience .soma-audience-title-sprout {
+  display: block;
+  width: 1.22rem;
+  height: 1.22rem;
+  flex: 0 0 1.22rem;
+  object-fit: contain;
+}
+
+#course-audience .soma-audience-choice-copy > span {
+  color: var(--ink);
+  font-size: clamp(.92rem, .87rem + .16vw, 1.02rem);
+  font-weight: 400;
+  line-height: 1.62;
+}
+
+#course-audience .soma-audience-no-break { white-space: nowrap; }
+
+#course-audience .soma-audience-figure {
+  display: flex;
+  width: min(100%, 64rem);
+  flex-direction: column;
+  margin: .55rem auto 0;
+  text-align: center;
+}
+
+#course-audience .soma-audience-figure-frame {
+  display: grid;
+  width: 100%;
+  min-height: 6.7rem;
+  place-items: end start;
+  overflow: visible;
+}
+
+#course-audience .soma-audience-figure-frame img {
+  display: block;
+  position: relative;
+  left: 0;
+  width: auto;
+  max-width: 100%;
+  height: 6.35rem;
+  object-fit: contain;
+  transform: none;
+  transition: left 240ms ease-out;
+}
+
+#course-audience .soma-audience-figure[data-frame="1"] img { left: 15%; }
+#course-audience .soma-audience-figure[data-frame="2"] img { left: 30%; }
+#course-audience .soma-audience-figure[data-frame="3"] img { left: 45%; }
+#course-audience .soma-audience-figure[data-frame="4"] img { left: 60%; }
+#course-audience .soma-audience-figure[data-frame="5"] img { left: 75%; }
+#course-audience .soma-audience-figure[data-frame="6"] img { left: calc(100% - 4.92rem); }
+
+@media (max-width: 900px) and (min-width: 761px) {
+  #course-audience .soma-development-audience-interactive .soma-audience-list {
+    width: min(100%, 42rem);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  #course-audience:has(.soma-development-audience-interactive) .section-shell > .heading { text-align: center; }
+
+  #course-audience .soma-development-audience-interactive .soma-audience-list {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: .72rem;
+    margin-top: 1.35rem;
+  }
+
+  #course-audience .soma-audience-title-sprout {
+    width: .86rem;
+    height: .86rem;
+    flex-basis: .86rem;
+  }
+
+  #course-audience .soma-audience-choice {
+    height: auto;
+    padding: .78rem .9rem;
+  }
+
+  #course-audience .soma-audience-choice-copy > span {
+    font-size: 1.04rem;
+    line-height: 1.78;
+  }
+
+  #course-audience .soma-audience-figure {
+    position: fixed;
+    right: calc(env(safe-area-inset-right, 0px) + 1rem);
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 1.35rem);
+    z-index: 7;
+    display: block;
+    width: 5rem;
+    height: 6rem;
+    margin: 0;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 180ms ease, visibility 0s linear 180ms;
+  }
+
+  #course-audience .soma-audience-figure.is-mobile-section-active {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+  }
+
+  #course-audience .soma-audience-figure-frame {
+    width: 100%;
+    min-height: 0;
+    height: 100%;
+    place-items: end center;
+    overflow: visible;
+  }
+
+  #course-audience .soma-audience-figure-frame img {
+    width: auto;
+    max-width: none;
+    height: 5.6rem;
+    left: 0;
+    transform: none;
+    transition: none;
+  }
+
+  #course-audience .soma-audience-figure[data-frame] img { left: 0; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #course-audience .soma-audience-choice,
+  #course-audience .soma-audience-choice .soma-audience-marker::after,
+  #course-audience .soma-audience-figure { transition: none; }
+}
