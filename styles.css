@@ -76,10 +76,22 @@ html,body{max-width:100%}body{overflow-wrap:anywhere}.section-shell,.reading,.ca
 @media(max-width:900px){.nav-links a.active{background:#1E3A2E;color:#fff}.nav-links a.active::after,.nav-links a:has(+ a.active)::after{display:none}}
 
 /* Homepage About and Now Growing body-copy colour test only. */
-#about .reading{font-size:clamp(1.2rem,2.15vw,1.5rem)}#about .reading p,#about .reading p strong,#about .reading p b,#now .highlight{color:var(--muted)}@media(max-width:600px){#about .reading{font-size:1.18rem}}
+#about .reading,#now .highlight{font-size:clamp(1rem,.92rem + .35vw,1.18rem)}#about .reading p,#about .reading p strong,#about .reading p b,#now .highlight{color:var(--muted)}#now .grid{align-items:start}#now .journey-card{height:auto;min-height:0}@media(max-width:600px){#about .reading,#now .highlight{font-size:1.08rem}}
+@media(min-width:901px){#now .journey-card{width:400px;justify-self:start}#now .journey-card>:last-child{margin-bottom:0}}
 
 /* About page: horizontal sticky in-page navigation. */
 .about-inpage-nav,.journey-inpage-nav,.course-topic-inpage-nav,.now-growing-inpage-nav{position:sticky;top:77px;z-index:5;width:min(calc(100% - 2rem),1120px);height:4rem;margin:0 auto;display:flex;align-items:center;flex-wrap:nowrap;gap:1.25rem;padding:.75rem .5rem .75rem 0;background:var(--bg);border-bottom:1px solid rgba(216,212,202,.72);overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch}.about-inpage-nav::-webkit-scrollbar,.journey-inpage-nav::-webkit-scrollbar,.course-topic-inpage-nav::-webkit-scrollbar,.now-growing-inpage-nav::-webkit-scrollbar{display:none}.about-inpage-nav a,.journey-inpage-nav a,.course-topic-inpage-nav a,.now-growing-inpage-nav a{flex:0 0 auto;display:inline-flex;align-items:center;gap:.45rem;padding:0;border:0;border-radius:0;background:transparent;color:var(--muted);font-size:.9375rem;font-weight:500;text-decoration:none}.about-inpage-nav .chapter-index,.journey-inpage-nav .chapter-index,.course-topic-inpage-nav .chapter-index,.now-growing-inpage-nav .chapter-index{font-family:system-ui;color:var(--clay);font-size:.9rem;font-weight:500;letter-spacing:.1em}.about-inpage-nav .chapter-name,.journey-inpage-nav .chapter-name,.course-topic-inpage-nav .chapter-name,.now-growing-inpage-nav .chapter-name{color:var(--muted)}#dance,#injury,#integration,#creation,#space,#path,#soma,#practice,#map,#paths,#course-intro,#course-directions,#course-features,#course-audience,#course-list,#start,#events,#past{scroll-margin-top:calc(77px + 4rem + 1rem)}
+.inpage-nav + .section{border-top:0}
+
+@media(min-width:901px){
+.about-inpage-nav,.journey-inpage-nav,.course-topic-inpage-nav,.now-growing-inpage-nav{height:3.35rem;padding:.4rem .5rem .4rem 0}
+#dance,#injury,#integration,#creation,#space,#path,#soma,#practice,#map,#paths,#course-intro,#course-directions,#course-features,#course-audience,#course-list,#start,#events,#past{scroll-margin-top:calc(77px + 3.35rem + 1rem)}
+body.is-desktop-long-read-route .site-header{transition:transform 240ms ease}
+body.is-desktop-long-read-route.is-site-header-collapsed .site-header{transform:translateY(-100%)}
+body.is-desktop-long-read-route .inpage-nav{top:77px;transition:top 240ms ease}
+body.is-desktop-long-read-route.is-site-header-collapsed .inpage-nav{top:0}
+body.is-desktop-long-read-route.is-site-header-collapsed #dance,body.is-desktop-long-read-route.is-site-header-collapsed #injury,body.is-desktop-long-read-route.is-site-header-collapsed #integration,body.is-desktop-long-read-route.is-site-header-collapsed #creation,body.is-desktop-long-read-route.is-site-header-collapsed #space,body.is-desktop-long-read-route.is-site-header-collapsed #path,body.is-desktop-long-read-route.is-site-header-collapsed #soma,body.is-desktop-long-read-route.is-site-header-collapsed #practice,body.is-desktop-long-read-route.is-site-header-collapsed #map,body.is-desktop-long-read-route.is-site-header-collapsed #paths,body.is-desktop-long-read-route.is-site-header-collapsed #course-intro,body.is-desktop-long-read-route.is-site-header-collapsed #course-directions,body.is-desktop-long-read-route.is-site-header-collapsed #course-features,body.is-desktop-long-read-route.is-site-header-collapsed #course-audience,body.is-desktop-long-read-route.is-site-header-collapsed #course-list{scroll-margin-top:calc(3.35rem + 1rem)}
+}
 
 /* About Section 02: chapter insight. */
 #injury .chapter-insight,#integration .chapter-insight,#creation .chapter-insight,#path .chapter-insight,#soma .chapter-insight,#practice .chapter-insight,#map .chapter-insight,#paths .chapter-insight,#course-intro .chapter-insight{margin:2rem 0 1rem;padding-left:1.25rem;border-left:2px solid var(--clay);color:var(--clay);font-size:clamp(1.35rem,2.4vw,1.7rem);font-weight:600;line-height:1.75}.journey-map-subtitle{color:var(--muted)}.journey-map-trigger{display:block;width:100%;margin:1.5rem 0 0;padding:0;border:0;background:transparent;cursor:zoom-in}.journey-map-trigger:focus-visible{outline:2px solid var(--clay);outline-offset:4px}.journey-map-image{display:block;width:100%;height:auto;margin:0}.image-lightbox-open{overflow:hidden}.image-lightbox{position:fixed;inset:0;z-index:30;display:flex;padding:1rem;background:rgba(36,49,41,.72)}.image-lightbox-stage{display:flex;width:100%;height:100%;align-items:center;justify-content:center;overflow:hidden;touch-action:none}.image-lightbox-stage.is-zoomed{cursor:grab}.image-lightbox-stage.is-zoomed:active{cursor:grabbing}.image-lightbox-image{display:block;max-width:100%;max-height:100%;width:auto;height:auto;transform-origin:center;transition:transform .15s ease;cursor:zoom-in;user-select:none;-webkit-user-drag:none}.image-lightbox-stage.is-zoomed .image-lightbox-image{cursor:grab}.image-lightbox-controls{position:absolute;top:.75rem;right:.75rem;display:flex;align-items:center;gap:.25rem}.image-lightbox-controls button{display:grid;min-width:2.5rem;height:2.5rem;place-items:center;padding:0 .5rem;border:0;background:rgba(36,49,41,.32);color:#fff;font:600 1rem/1 system-ui;cursor:pointer}.image-lightbox-controls button:disabled{opacity:.4;cursor:default}.image-lightbox-controls .image-lightbox-close{font-size:1.8rem;font-weight:400}.image-lightbox-controls button:focus-visible{outline:2px solid #fff;outline-offset:2px}
@@ -147,6 +159,32 @@ html,body{max-width:100%}body{overflow-wrap:anywhere}.section-shell,.reading,.ca
 /* Soma Development Section 05 temporary course-system status only. */
 .soma-development-course-list-note{width:min(100%,46rem);margin:0;color:var(--muted);font-size:clamp(1rem,.92rem + .35vw,1.18rem);font-weight:400;line-height:2}
 .somatic-awareness-course-list-note{width:min(100%,46rem);margin:0;color:var(--muted);font-size:clamp(1rem,.92rem + .35vw,1.18rem);font-weight:400;line-height:2}
+
+/* Integrated myofascial magazine route. */
+body.is-myofascial-magazine-route{overflow:hidden}
+body.is-myofascial-magazine-route .site-header{display:none}
+body.is-myofascial-magazine-route .site-footer{display:none}
+.myofascial-magazine-route{height:100dvh;min-height:0;background:#fff}
+.myofascial-magazine-route iframe{display:block;width:100%;height:100%;border:0;background:#fff}
+
+/* Somatic Awareness Section 05: course library prototype. */
+.somatic-course-library{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(.85rem,1.6vw,1.25rem);align-items:stretch}
+.somatic-course-card{display:flex;min-width:0;min-height:100%;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:1.5rem;background:rgba(255,253,248,.72);color:var(--ink);text-decoration:none}
+.somatic-course-card-media{position:relative;overflow:hidden;aspect-ratio:4/3;border-radius:calc(1.5rem - 1px) calc(1.5rem - 1px) 0 0;background:linear-gradient(135deg,rgba(220,231,215,.78),rgba(238,228,211,.78))}
+.somatic-course-card-media img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 31%}
+.somatic-course-card-body{display:flex;min-height:0;flex:1;flex-direction:column;padding:1.2rem 1.15rem 1.25rem}
+.somatic-course-card h3{margin:0;color:var(--ink);font-size:clamp(1.08rem,1rem + .22vw,1.24rem);font-weight:700;line-height:1.55}
+.somatic-course-card-body>p{margin:.7rem 0 1rem;color:var(--muted);font-size:.94rem;line-height:1.8}
+.somatic-course-card--available{cursor:pointer;transition:border-color .18s ease,background-color .18s ease,transform .18s ease}
+.somatic-course-card--available:hover{border-color:rgba(56,90,67,.62);background:rgba(255,253,248,.96);transform:translateY(-2px)}
+.somatic-course-card--available:focus-visible{outline:2px solid var(--green);outline-offset:4px}
+.somatic-course-card--placeholder{border-style:dashed;opacity:.72}
+.somatic-course-card-placeholder-image{display:grid;place-items:center}
+.somatic-course-card-placeholder-image::before{position:absolute;width:38%;aspect-ratio:1;border:1px solid rgba(104,115,68,.2);border-radius:50%;content:""}
+.somatic-course-card-placeholder-image span{position:relative;color:rgba(104,115,68,.62);font-family:system-ui,sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:1100px){.somatic-course-library{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:800px){.somatic-course-library{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.somatic-course-library{grid-template-columns:1fr;gap:.75rem}.somatic-course-card{border-radius:1rem}.somatic-course-card-media{border-radius:calc(1rem - 1px) calc(1rem - 1px) 0 0}.somatic-course-card-body{padding:.9rem .82rem 1rem}.somatic-course-card h3{font-size:1.02rem;line-height:1.5}.somatic-course-card-body>p{margin:.55rem 0 .8rem;font-size:.87rem;line-height:1.72}}
 
 
 
