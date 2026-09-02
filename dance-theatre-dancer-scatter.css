@@ -1,0 +1,203 @@
+/* Dance Theatre v1.1: quiet, transparent dancer illustrations placed in desktop whitespace. */
+.dance-theatre-directions.dance-theatre-directions-two{
+  min-height:30rem;
+}
+.dance-theatre-direction-dancer{
+  position:absolute;
+  z-index:1;
+  left:clamp(.25rem,2vw,2rem);
+  bottom:.25rem;
+  width:clamp(4.8rem,7vw,5.8rem);
+  margin:0;
+  pointer-events:none;
+}
+.dance-theatre-direction-dancer img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.dance-theatre-audience{
+  position:relative;
+}
+.dance-theatre-audience-dancer{
+  position:absolute;
+  z-index:0;
+  margin:0;
+  pointer-events:none;
+}
+.dance-theatre-audience-dancer img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.dance-theatre-audience-dancer--left-top{
+  top:.4rem;
+  left:clamp(-9rem,-12vw,-6rem);
+  width:clamp(4.7rem,7vw,5.8rem);
+}
+.dance-theatre-audience-dancer--right-middle{
+  top:8.75rem;
+  right:clamp(-9rem,-12vw,-6rem);
+  width:clamp(5.15rem,7.5vw,6.35rem);
+}
+.dance-theatre-audience-dancer--left-bottom{
+  bottom:.1rem;
+  left:clamp(-8.5rem,-11vw,-5.5rem);
+  width:clamp(5rem,7.5vw,6.1rem);
+}
+.dance-theatre-audience-list,
+.dance-theatre-audience-closing{
+  position:relative;
+  z-index:1;
+}
+.dance-theatre-audience-closing span{display:inline}
+@media(max-width:1050px){
+  .dance-theatre-direction-dancer,
+  .dance-theatre-audience-dancer{display:none}
+  .dance-theatre-directions.dance-theatre-directions-two{min-height:0}
+}
+@media(max-width:600px){
+  .dance-theatre-audience-closing{
+    width:max-content;
+    max-width:calc(100% - 2rem);
+    margin-inline:auto;
+    font-size:1.15rem;
+    letter-spacing:0;
+    line-height:1.85;
+  }
+  .dance-theatre-audience-closing span{
+    display:block;
+    white-space:nowrap;
+  }
+}
+
+/* Mobile: the dancers accompany section headings only; reading columns remain uninterrupted. */
+.dance-theatre-section-title-mark{display:contents}
+.dance-theatre-section-title-mark>img,
+.dance-theatre-audience-closing-dancer{display:none}
+@media(max-width:600px){
+  .dance-theatre-section-title-mark{
+    display:inline-flex;
+    align-items:center;
+    gap:.42rem;
+    max-width:100%;
+  }
+  .dance-theatre-section-title-mark h2{
+    margin:.35rem 0 0;
+    white-space:nowrap;
+  }
+  .dance-theatre-section-title-mark>img{
+    display:block;
+    width:2.05rem;
+    height:auto;
+    max-height:2.55rem;
+    object-fit:contain;
+  }
+  #course-intro .dance-theatre-section-title-mark>img{width:1.9rem;transform:translateY(-.08rem) rotate(-5deg)}
+  #course-directions .dance-theatre-section-title-mark>img{width:2.15rem;transform:translateY(.02rem) rotate(4deg)}
+  #course-features .dance-theatre-section-title-mark>img{width:2rem;transform:translateY(-.1rem) rotate(-3deg)}
+  #course-audience .dance-theatre-section-title-mark>img{width:1.9rem;transform:translateY(.04rem) rotate(5deg)}
+  #course-list .dance-theatre-section-title-mark>img{width:2.05rem;transform:translateY(-.04rem) rotate(-4deg)}
+  .dance-theatre-audience-closing-wrap{
+    display:grid;
+    grid-template-columns:2.35rem auto 2.15rem;
+    align-items:center;
+    justify-content:center;
+    column-gap:.28rem;
+    width:max-content;
+    max-width:100%;
+    margin:2.2rem auto 0;
+  }
+  .dance-theatre-audience-closing-wrap .dance-theatre-audience-closing{
+    grid-column:2;
+    width:auto;
+    max-width:none;
+    margin:0;
+  }
+  .dance-theatre-audience-closing-dancer{
+    display:block;
+    width:100%;
+    margin:0;
+    pointer-events:none;
+  }
+  .dance-theatre-audience-closing-dancer img{
+    display:block;
+    width:100%;
+    height:auto;
+  }
+  .dance-theatre-audience-closing-dancer--left{
+    grid-column:1;
+    align-self:end;
+    transform:translateY(.12rem) rotate(-5deg);
+  }
+  .dance-theatre-audience-closing-dancer--right{
+    grid-column:3;
+    align-self:start;
+    transform:translateY(-.22rem) rotate(5deg);
+  }
+}
+
+/* Mobile v1.5: stronger title figures plus two mid-scale dancers in existing direction whitespace. */
+.dance-theatre-mobile-direction-dancer{display:none}
+@media(max-width:600px){
+  .dance-theatre-directions.dance-theatre-directions-two{overflow:visible}
+  .dance-theatre-section-title-mark>img{
+    width:2.7rem;
+    max-height:2.95rem;
+  }
+  #course-intro .dance-theatre-section-title-mark>img{width:2.55rem}
+  #course-directions .dance-theatre-section-title-mark>img{width:2.85rem}
+  #course-features .dance-theatre-section-title-mark>img{width:2.7rem}
+  #course-audience .dance-theatre-section-title-mark>img{width:2.55rem}
+  #course-list .dance-theatre-section-title-mark>img{width:2.72rem}
+  .dance-theatre-mobile-direction-dancer{
+    position:absolute;
+    z-index:1;
+    display:block;
+    margin:0;
+    pointer-events:none;
+  }
+  .dance-theatre-mobile-direction-dancer img{
+    display:block;
+    width:100%;
+    height:auto;
+  }
+  .dance-theatre-mobile-direction-dancer--glide{
+    top:58%;
+    right:-.35rem;
+    width:5.15rem;
+    transform:rotate(2deg);
+  }
+  .dance-theatre-mobile-direction-dancer--grounded{
+    bottom:-1.1rem;
+    left:-3.05rem;
+    width:5.7rem;
+    transform:rotate(-2deg);
+  }
+}
+
+/* Mobile v1.7: chapter dancers become legible companions; direction dancers remain in whitespace. */
+@media(max-width:600px){
+  .dance-theatre-section-title-mark{gap:1rem}
+  .dance-theatre-section-title-mark>img{
+    width:clamp(3.65rem,18vw,4.42rem);
+    max-height:4.55rem;
+  }
+  #course-intro .dance-theatre-section-title-mark>img{width:clamp(3.55rem,17vw,3.95rem)}
+  #course-directions .dance-theatre-section-title-mark>img{width:clamp(3.9rem,19vw,4.42rem)}
+  #course-features .dance-theatre-section-title-mark>img{width:clamp(3.72rem,18vw,4.18rem)}
+  #course-audience .dance-theatre-section-title-mark>img{width:clamp(3.52rem,17vw,3.9rem)}
+  #course-list .dance-theatre-section-title-mark>img{width:clamp(3.75rem,18vw,4.22rem)}
+  .dance-theatre-mobile-direction-dancer--glide{
+    top:calc(100% + .25rem);
+    right:.1rem;
+    width:clamp(2.35rem,12vw,2.8rem);
+    transform:rotate(2deg);
+  }
+  .dance-theatre-mobile-direction-dancer--grounded{
+    bottom:-2.25rem;
+    left:-.9rem;
+    width:clamp(2.7rem,13vw,3.2rem);
+    transform:rotate(-2deg);
+  }
+}

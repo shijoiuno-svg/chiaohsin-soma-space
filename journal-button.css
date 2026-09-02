@@ -1,0 +1,10 @@
+/* Soma Journal desktop reading link — page-specific, not a shared button rule. */
+@media(min-width:901px){
+  .external .button.fill[href*="vocus.cc"]{
+    flex:0 0 auto;
+    min-inline-size:9.4rem;
+    padding:.48rem 1.35rem;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+}

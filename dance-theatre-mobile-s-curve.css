@@ -1,0 +1,12 @@
+/* Dance Theatre Section 02: mobile-only large S-shaped movement trace. */
+@media(max-width:760px){
+  .dance-theatre-flow-line-mobile{display:none!important}
+  .dance-theatre-directions::before{position:absolute;inset:1.1rem 0 1rem;z-index:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 360 1000' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M323 35c11 85-5 164-27 217-56 128-221 56-261 153-31 75-12 167 43 215 72 64 207 30 244 135 18 53 8 125-6 195' fill='none' stroke='%23B9735B' stroke-opacity='.36' stroke-width='1.1' stroke-linecap='round' stroke-linejoin='round' stroke-dasharray='1 6'/%3E%3C/svg%3E");background-size:100% 100%;background-repeat:no-repeat;content:"";pointer-events:none}
+  .dance-theatre-directions .dance-theatre-direction{width:84%;max-width:19rem;padding-left:.55rem;background:var(--bg)}
+  .dance-theatre-directions .dance-theatre-direction-expression{margin-left:0;margin-right:auto}
+  .dance-theatre-directions .dance-theatre-direction-creation{width:82%;max-width:18.5rem;margin-left:auto;margin-right:0}
+  .dance-theatre-directions .dance-theatre-direction-integration{width:86%;max-width:19.25rem;margin-left:0;margin-right:auto}
+  .dance-theatre-direction p{line-height:1.92}
+  .dance-theatre-direction .dance-theatre-explore-label{margin-top:.86rem}
+  .dance-theatre-word-cloud{margin-top:.58rem}
+}

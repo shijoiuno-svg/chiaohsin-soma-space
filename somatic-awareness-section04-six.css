@@ -1,0 +1,293 @@
+/* Somatic Awareness — Section 04 six exploration entries only. */
+@media (min-width: 761px) {
+  #course-audience .somatic-awareness-audience {
+    width: min(100%, 70rem);
+  }
+
+  #course-audience .somatic-awareness-audience-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+      "one two three"
+      "four five six"
+      "message message message";
+    column-gap: clamp(1rem, 2.4vw, 1.9rem);
+    row-gap: .9rem;
+    margin-top: 2rem;
+  }
+
+  #course-audience .somatic-awareness-audience-item-01 { grid-area: one; }
+  #course-audience .somatic-awareness-audience-item-02 { grid-area: two; }
+  #course-audience .somatic-awareness-audience-item-03 { grid-area: three; }
+  #course-audience .somatic-awareness-audience-item-04 { grid-area: four; }
+  #course-audience .somatic-awareness-audience-item-05 { grid-area: five; }
+  #course-audience .somatic-awareness-audience-item-06 { grid-area: six; }
+
+  #course-audience .somatic-awareness-audience-item {
+    height: auto;
+    min-height: 7.15rem;
+    padding: .68rem .78rem;
+    gap: .82rem;
+    font-size: clamp(1rem, .92rem + .3vw, 1.14rem);
+    line-height: 1.58;
+  }
+
+  #course-audience .somatic-awareness-audience-item > span:last-child {
+    flex: 0 1 10.6em;
+    max-width: 10.6em;
+  }
+
+  #course-audience .somatic-awareness-audience-marker {
+    width: 1.62rem;
+    height: 1.62rem;
+    flex-basis: 1.62rem;
+    border-width: 2px;
+  }
+
+  #course-audience .somatic-awareness-audience-marker::after { inset: 4.2px; }
+
+  #course-audience .somatic-awareness-audience-revelation {
+    grid-area: message;
+    align-self: center;
+    justify-self: center;
+    width: min(100%, 42rem);
+    min-height: 7.25rem;
+    margin: .55rem auto 0;
+    padding: .55rem 0;
+  }
+
+  #course-audience .somatic-awareness-audience-revelation[data-count="1"] { font-size: clamp(1.15rem, 1.02rem + .34vw, 1.42rem); opacity: .78; }
+  #course-audience .somatic-awareness-audience-revelation[data-count="2"] { font-size: clamp(1.22rem, 1.06rem + .4vw, 1.52rem); opacity: .86; }
+  #course-audience .somatic-awareness-audience-revelation[data-count="3"] { font-size: clamp(1.3rem, 1.1rem + .48vw, 1.65rem); opacity: .93; }
+  #course-audience .somatic-awareness-audience-revelation[data-count="4"] { font-size: clamp(1.38rem, 1.14rem + .58vw, 1.78rem); }
+  #course-audience .somatic-awareness-audience-revelation[data-count="5"] { font-size: clamp(1.48rem, 1.18rem + .7vw, 1.94rem); text-shadow: 0 0 1.45rem rgba(104,115,68,.13); }
+  #course-audience .somatic-awareness-audience-revelation[data-count="6"] { font-size: clamp(1.58rem, 1.22rem + .84vw, 2.14rem); line-height: 1.68; text-shadow: 0 0 1.65rem rgba(104,115,68,.16); }
+
+  #course-audience .somatic-awareness-audience-revelation[data-count="5"]::before { opacity: .9; }
+  #course-audience .somatic-awareness-audience-revelation[data-count="6"]::before { opacity: 1; }
+}
+
+@media (max-width: 760px) {
+  #course-audience .somatic-awareness-audience-list {
+    grid-template-columns: 1fr;
+    grid-template-areas: none;
+  }
+
+  #course-audience .somatic-awareness-audience-item-01,
+  #course-audience .somatic-awareness-audience-item-02,
+  #course-audience .somatic-awareness-audience-item-03,
+  #course-audience .somatic-awareness-audience-item-04,
+  #course-audience .somatic-awareness-audience-item-05,
+  #course-audience .somatic-awareness-audience-item-06,
+  #course-audience .somatic-awareness-audience-revelation { grid-area: auto; }
+
+  #course-audience .somatic-awareness-audience-revelation[data-count="5"] { font-size: 1.43rem; }
+  #course-audience .somatic-awareness-audience-revelation[data-count="6"] { font-size: 1.5rem; line-height: 1.6; }
+}
+
+/* The revelation only fully lights up at the sixth selection. */
+#course-audience .somatic-awareness-audience-revelation[data-count="1"]::before,
+#course-audience .somatic-awareness-audience-revelation[data-count="1"]::after,
+#course-audience .somatic-awareness-audience-revelation[data-count="2"]::before,
+#course-audience .somatic-awareness-audience-revelation[data-count="2"]::after,
+#course-audience .somatic-awareness-audience-revelation[data-count="3"]::before,
+#course-audience .somatic-awareness-audience-revelation[data-count="3"]::after,
+#course-audience .somatic-awareness-audience-revelation[data-count="4"]::before,
+#course-audience .somatic-awareness-audience-revelation[data-count="4"]::after,
+#course-audience .somatic-awareness-audience-revelation[data-count="5"]::before {
+  display: none;
+}
+
+#course-audience .somatic-awareness-audience-revelation[data-count="5"]::after {
+  display: block;
+  opacity: .36;
+  animation: somatic-awareness-six-prelude-glow .95s ease-out both;
+}
+
+#course-audience .somatic-awareness-audience-revelation[data-count="6"] {
+  text-shadow: 0 0 .45rem rgba(104,115,68,.22), 0 0 1.7rem rgba(104,115,68,.18);
+  animation: somatic-awareness-six-revelation 1.15s ease-out both;
+}
+
+#course-audience .somatic-awareness-audience-revelation[data-count="6"]::before {
+  display: block;
+  width: 2.5px;
+  height: 2.5px;
+  background: rgba(104,115,68,.48);
+  box-shadow:
+    -5.25rem -1.05rem 0 -.55px rgba(104,115,68,.3),
+    5.1rem -.6rem 0 -.7px rgba(104,115,68,.28),
+    -2.5rem 1.45rem 0 -.7px rgba(104,115,68,.24),
+    3.25rem 1.3rem 0 -.75px rgba(104,115,68,.22);
+  animation: somatic-awareness-six-sparkle 1.35s ease-out both;
+}
+
+#course-audience .somatic-awareness-audience-revelation[data-count="6"]::after {
+  display: block;
+  inset: -1.5rem -2.8rem;
+  background: radial-gradient(ellipse, rgba(104,115,68,.18), rgba(104,115,68,0) 68%);
+  animation: somatic-awareness-six-glow 1.35s ease-out both;
+}
+
+@keyframes somatic-awareness-six-revelation {
+  0% { opacity: 0; filter: blur(2px); transform: translateY(8px); }
+  38% { opacity: 1; filter: blur(0); }
+  100% { opacity: 1; filter: blur(0); transform: translateY(0); }
+}
+
+@keyframes somatic-awareness-six-sparkle {
+  0% { opacity: 0; transform: translateY(4px) scale(.7); }
+  42% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-2px) scale(.9); }
+}
+
+@keyframes somatic-awareness-six-glow {
+  0% { opacity: 0; transform: scale(.72); }
+  45% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.08); }
+}
+
+@keyframes somatic-awareness-six-prelude-glow {
+  0% { opacity: 0; }
+  45% { opacity: .42; }
+  100% { opacity: 0; }
+}
+
+@media (max-width: 760px) {
+  #course-audience .somatic-awareness-audience-revelation[data-count="6"]::before {
+    box-shadow:
+      -3.4rem -.55rem 0 -.75px rgba(104,115,68,.24),
+      3.35rem -.45rem 0 -.8px rgba(104,115,68,.22),
+      2.05rem 1.05rem 0 -.85px rgba(104,115,68,.18);
+  }
+
+  #course-audience .somatic-awareness-audience-revelation[data-count="6"]::after {
+    inset: -.95rem -1.45rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #course-audience .somatic-awareness-audience-revelation[data-count="5"]::after,
+  #course-audience .somatic-awareness-audience-revelation[data-count="6"],
+  #course-audience .somatic-awareness-audience-revelation[data-count="6"]::before,
+  #course-audience .somatic-awareness-audience-revelation[data-count="6"]::after {
+    animation: none;
+  }
+}
+
+/* Sixth selection: a calm, static constellation rather than an animation. */
+#course-audience .somatic-awareness-audience-revelation[data-count="6"] {
+  animation: none;
+  text-shadow: 0 0 .85rem rgba(104,115,68,.15);
+}
+
+#course-audience .somatic-awareness-audience-revelation[data-count="6"]::before,
+#course-audience .somatic-awareness-audience-revelation[data-count="6"]::after {
+  display: block;
+  z-index: 0;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  filter: none;
+  color: rgba(104,115,68,.68);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .82em;
+  font-weight: 400;
+  letter-spacing: .46em;
+  line-height: 1;
+  white-space: nowrap;
+  animation: none;
+}
+
+#course-audience .somatic-awareness-audience-revelation[data-count="6"]::before {
+  content: "✦  ✧";
+  top: -.78em;
+  left: -1.1rem;
+}
+
+#course-audience .somatic-awareness-audience-revelation[data-count="6"]::after {
+  content: "✧  ✦";
+  inset: auto -1.2rem -.72em auto;
+}
+
+@media (max-width: 760px) {
+  #course-audience .somatic-awareness-audience-revelation.is-visible[data-count="6"] {
+    left: 50%;
+    width: min(calc(100vw - 3rem), 22rem);
+    max-width: calc(100vw - 3rem);
+    box-sizing: border-box;
+    transform: translateX(-50%);
+    animation: none;
+  }
+
+  #course-audience .somatic-awareness-audience-revelation[data-count="6"]::before,
+  #course-audience .somatic-awareness-audience-revelation[data-count="6"]::after {
+    font-size: .68em;
+    letter-spacing: .3em;
+  }
+
+  #course-audience .somatic-awareness-audience-revelation[data-count="6"]::before {
+    top: -.7em;
+    left: .45rem;
+  }
+
+  #course-audience .somatic-awareness-audience-revelation[data-count="6"]::after {
+    right: .45rem;
+    bottom: -.7em;
+  }
+}
+
+/* Sixth selection only — warm gold copy with a small, contained sparkle. */
+#course-audience .somatic-awareness-audience-revelation[data-count="6"] {
+  color: #c79a2b;
+  text-shadow: 0 0 .7rem rgba(199,154,43,.16);
+}
+
+#course-audience .somatic-awareness-audience-revelation[data-count="6"]::before,
+#course-audience .somatic-awareness-audience-revelation[data-count="6"]::after {
+  z-index: 0;
+  color: #d4a83a;
+  font-family: system-ui, sans-serif;
+  font-size: .52em;
+  letter-spacing: .12em;
+  line-height: 1;
+  text-shadow: 0 0 .42rem rgba(212,168,58,.22);
+}
+
+#course-audience .somatic-awareness-audience-revelation[data-count="6"]::before {
+  content: "✨︎  ✦  ✧\A  ✧      ✨︎";
+  top: .12rem;
+  left: .42rem;
+  white-space: pre;
+}
+
+#course-audience .somatic-awareness-audience-revelation[data-count="6"]::after {
+  content: "✨︎  ✧  ✦\A  ✧      ✨︎";
+  inset: auto .42rem .1rem auto;
+  white-space: pre;
+}
+
+@media (max-width: 760px) {
+  #course-audience .somatic-awareness-audience-revelation.is-visible[data-count="6"] {
+    width: min(calc(100vw - 3rem), 22rem);
+    max-width: calc(100vw - 3rem);
+    padding: .56rem .78rem;
+    overflow: hidden;
+    transform: translateX(-50%);
+  }
+
+  #course-audience .somatic-awareness-audience-revelation[data-count="6"]::before {
+    content: "✨︎  ✦\A  ✧  ✨︎";
+    top: .16rem;
+    left: .34rem;
+  }
+
+  #course-audience .somatic-awareness-audience-revelation[data-count="6"]::after {
+    content: "✨︎  ✧\A  ✦";
+    right: .34rem;
+    bottom: .16rem;
+  }
+}

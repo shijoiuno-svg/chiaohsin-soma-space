@@ -1,0 +1,88 @@
+/* Dance Theatre Section 02: two non-linear exploration fields. */
+.dance-theatre-directions.dance-theatre-directions-two{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:start;
+  column-gap:clamp(3rem,9vw,7.5rem);
+  row-gap:0;
+  width:min(100%,66rem);
+  min-height:0;
+  padding:1.35rem 0 1.1rem;
+}
+.dance-theatre-directions-two .dance-theatre-flow-line{
+  inset:0;
+  width:100%;
+  height:100%;
+}
+.dance-theatre-directions-two .dance-theatre-direction{
+  width:auto;
+  max-width:29rem;
+  margin:0;
+  transform:none;
+}
+.dance-theatre-directions-two .dance-theatre-direction-expression{
+  grid-column:1;
+  grid-row:1;
+  align-self:start;
+}
+.dance-theatre-directions-two .dance-theatre-direction-creation{
+  grid-column:2;
+  grid-row:1;
+  align-self:end;
+  margin-top:2.75rem;
+}
+@media(max-width:760px){
+  .dance-theatre-directions.dance-theatre-directions-two{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:3.25rem;
+    width:100%;
+    padding:.15rem 0 .35rem;
+    overflow:hidden;
+  }
+  .dance-theatre-directions-two::before{
+    display:none!important;
+    content:none!important;
+  }
+  .dance-theatre-directions-two .dance-theatre-flow-line{
+    display:none!important;
+  }
+  .dance-theatre-directions-two .dance-theatre-flow-line-mobile{
+    display:block!important;
+    position:absolute;
+    top:.55rem;
+    bottom:.45rem;
+    left:.15rem;
+    z-index:0;
+    width:4.5rem;
+    height:calc(100% - 1rem);
+    overflow:visible;
+    pointer-events:none;
+  }
+  .dance-theatre-directions-two .dance-theatre-flow-line-mobile path{
+    stroke:rgba(185,115,91,.3);
+    stroke-width:1.1;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-dasharray:1 6;
+  }
+  .dance-theatre-directions-two .dance-theatre-direction,
+  .dance-theatre-directions-two .dance-theatre-direction-expression,
+  .dance-theatre-directions-two .dance-theatre-direction-creation{
+    grid-column:1;
+    grid-row:auto;
+    width:84%;
+    max-width:20rem;
+    margin:0;
+    padding-left:.55rem;
+    background:var(--bg);
+    transform:none;
+  }
+  .dance-theatre-directions-two .dance-theatre-direction-expression{
+    margin-right:auto;
+  }
+  .dance-theatre-directions-two .dance-theatre-direction-creation{
+    width:82%;
+    max-width:19rem;
+    margin-left:auto;
+  }
+}
