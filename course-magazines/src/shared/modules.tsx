@@ -7,7 +7,11 @@ export function VideoModule({ number, heading, id, video }: { number: string; he
   const src = video.url || (video.videoId ? `https://www.youtube-nocookie.com/embed/${video.videoId}` : "");
   return <section className="section section-05" aria-labelledby={id}>
     <ChapterHeading number={number} title={heading} id={id} />
-    <div className="video-wrap"><iframe src={src} title={video.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div>
+    {(video.leadTitle || video.leadText) && <div className="video-intro">{video.leadTitle && <strong>{video.leadTitle}</strong>}{video.leadText && <p>{video.leadText}</p>}</div>}
+    <div className="video-wrap">{src
+      ? <iframe src={src} title={video.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+      : <div className="video-placeholder" role="img" aria-label={video.title}><span>VIDEO</span><p>{video.title}</p></div>}
+    </div>
     {(video.caption || video.description) && <div className="video-caption">{video.caption && <p>{video.caption}</p>}{video.description && <p>{video.description}</p>}</div>}
   </section>;
 }

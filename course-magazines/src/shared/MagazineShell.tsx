@@ -3,8 +3,8 @@ import type { CourseMagazineConfig } from "./types";
 
 type ThemeStyle = CSSProperties & Record<`--${string}`, string>;
 
-export function ReturnToCourseList({ target, className }: { target: string; className: string }) {
-  return <a className={className} href={target} target="_top">← 返回課程列表</a>;
+export function ReturnToCourseList({ target, className, style }: { target: string; className: string; style?: CSSProperties }) {
+  return <a className={className} href={target} target="_top" style={style}>← 返回課程列表</a>;
 }
 
 export function MagazineShell({ config, children }: { config: CourseMagazineConfig; children: ReactNode }) {
@@ -25,7 +25,7 @@ export function MagazineShell({ config, children }: { config: CourseMagazineConf
   };
 
   return <>
-    <ReturnToCourseList className="floating-return" target={config.returnTarget} />
+    <ReturnToCourseList className="floating-return" target={config.returnTarget} style={theme} />
     <main className="magazine" data-course-magazine={config.slug} style={theme}>{children}</main>
   </>;
 }

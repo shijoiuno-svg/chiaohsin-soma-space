@@ -3,7 +3,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
 import typescript from "@rollup/plugin-typescript";
-import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -16,6 +16,13 @@ const courses = {
     title: "肌膜覺察與動作探索｜喬馨身體空間",
     description: "從肌膜的連續性出發，探索力量、動作與整體身體回應。",
   },
+  spine: {
+    entry: resolve(projectRoot, "src/courses/spine-awareness/main.tsx"),
+    publicDir: resolve(projectRoot, "src/courses/spine-awareness/assets"),
+    outdir: resolve(siteRoot, "spine-magazine"),
+    title: "脊椎感知與身體排列｜喬馨身體空間",
+    description: "從不同面向重新認識脊椎，感受身體的支撐、排列與使用方式。",
+  },
 };
 
 const requested = process.argv[2];
@@ -26,6 +33,7 @@ for (const [name, course] of selected) {
   const assetsDir = resolve(course.outdir, "assets");
   await rm(assetsDir, { recursive: true, force: true });
   await mkdir(assetsDir, { recursive: true });
+  if (course.publicDir) await cp(course.publicDir, resolve(course.outdir, "media"), { recursive: true, force: true });
   let css = "";
   const bundle = await rollup({
     input: course.entry,

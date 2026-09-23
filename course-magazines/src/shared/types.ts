@@ -23,6 +23,8 @@ export type VideoData = {
   videoId?: string;
   url?: string;
   title: string;
+  leadTitle?: string;
+  leadText?: string;
   caption?: string;
   description?: string;
   placeholder?: boolean;

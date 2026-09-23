@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "build:myofascial": "node scripts/build.mjs myofascial"
+    "build:myofascial": "node scripts/build.mjs myofascial",
+    "build:spine": "node scripts/build.mjs spine"
   },
   "dependencies": {
     "react": "19.2.0",
