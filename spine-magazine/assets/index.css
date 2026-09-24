@@ -111,7 +111,10 @@ img{display:block;max-width:100%}
 .spine-development .development-reflection{padding:20px 30px 20px;text-align:left}.spine-development .development-reflection ul{padding:0;border:0}.spine-development .development-reflection li{margin:0;padding:16px 0;border-bottom:1px solid var(--spine-rule);color:var(--spine-ink);font-size:15px;line-height:1.9}
 @media(min-width:761px){.spine-development .development-reflection{max-width:none;width:100%;padding-right:18px;padding-left:18px}}
 @media(max-width:760px){
-  .spine-development .development-timeline{padding-top:38px}.spine-development .development-timeline img{width:100%}
+  .spine-development .development-mobile-reader{min-height:510px}
+  .spine-development .development-page-timeline,.spine-development .development-page-directions,.spine-development .development-page-reflection{display:grid;grid-template-rows:auto minmax(0,1fr);min-height:510px}
+  .spine-development .development-page-timeline .development-timeline,.spine-development .development-page-directions .development-directions-wrap,.spine-development .development-page-reflection .development-reflection{align-self:center}
+  .spine-development .development-timeline{padding-top:0}.spine-development .development-timeline img{width:100%}
   .spine-development .development-directions-wrap>p{margin-top:25px;font-size:14px}
   .spine-development .development-directions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding-top:24px}.spine-development .development-directions figure{display:flex;padding:0;background:none;border:0}.spine-development .development-directions img{height:118px}.spine-development .development-directions figcaption{margin-top:13px;font-size:15px}
   .spine-development .development-reflection{padding:28px 4px 12px}.spine-development .development-reflection li{font-size:14px}
@@ -171,7 +174,7 @@ img{display:block;max-width:100%}
 .spine-alignment .alignment-default{display:grid;justify-items:center;align-content:center;height:100%}
 .spine-alignment .alignment-default figure{display:grid;place-items:center;height:380px}
 .spine-alignment .alignment-default img{display:block;width:auto;max-width:100%;height:335px;object-fit:contain}
-.spine-alignment .alignment-default p{margin:5px 0 0;color:var(--spine-muted);font-size:14px;letter-spacing:.05em}
+.spine-alignment .alignment-default p{margin:5px 0 0;color:var(--spine-ink);font-size:14px;letter-spacing:.05em}
 .spine-alignment .alignment-feature{display:flex;flex-direction:column;justify-content:center;height:100%}
 .spine-alignment .alignment-feature img{display:block;width:80%;height:325px;margin:0 auto;object-fit:contain}
 .spine-alignment .alignment-feature-caption{margin:5px 0 0;font-size:16px;line-height:1.7}
@@ -180,8 +183,8 @@ img{display:block;max-width:100%}
 .spine-alignment .alignment-tension-plate figcaption{position:relative;width:80%;height:21px;margin:2px auto 0;color:var(--purple);font-size:13px;line-height:1.6;text-align:center}
 .spine-alignment .alignment-tension-plate figcaption span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}
 .spine-alignment .alignment-tension-plate figcaption span:nth-child(1){left:25%}
-.spine-alignment .alignment-tension-plate figcaption span:nth-child(2){left:59%}
-.spine-alignment .alignment-tension-plate figcaption span:nth-child(3){left:84%}
+.spine-alignment .alignment-tension-plate figcaption span:nth-child(2){left:55.8%}
+.spine-alignment .alignment-tension-plate figcaption span:nth-child(3){left:85.2%}
 .spine-alignment .alignment-practice{display:flex;flex-direction:column;justify-content:center;height:100%}
 .spine-alignment .alignment-practice h3{margin:0;font-size:25px;font-weight:400;line-height:1.5;transform:translateY(-10px)}
 .spine-alignment .alignment-practice-illustrations{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:12px;transform:translateY(-10px)}
@@ -193,6 +196,12 @@ img{display:block;max-width:100%}
 .spine-alignment .alignment-practice-close svg{flex:0 0 20px;width:20px;height:20px;margin-top:3px;color:var(--purple)}
 .spine-alignment .alignment-practice-close strong{display:block;color:var(--purple);font-size:15px;font-weight:400}
 .spine-alignment .alignment-practice-close p{margin:2px 0 0}
+@media(min-width:761px){
+  .spine-alignment .alignment-default{align-content:start;padding-top:64px}
+  .spine-alignment .alignment-default figure{height:335px}
+  .spine-alignment .alignment-default img{height:312px}
+  .spine-alignment .alignment-default p{margin-top:2px}
+}
 @media(max-width:760px){
   .spine-alignment{display:flex;flex-direction:column;padding-top:70px;padding-bottom:70px}
   .spine-alignment .alignment-header,.spine-alignment .alignment-stage{display:contents}
@@ -209,10 +218,14 @@ img{display:block;max-width:100%}
   .spine-alignment .alignment-default img{height:280px}
   .spine-alignment .alignment-default p{margin-top:10px}
   .spine-alignment .alignment-feature{height:auto;justify-content:flex-start}
+  .spine-alignment .alignment-feature,.spine-alignment .alignment-practice{transform:translateY(10px)}
   .spine-alignment .alignment-feature img{width:100%;height:auto;max-height:330px}
   .spine-alignment .alignment-feature-caption{margin-top:12px}
   .spine-alignment .alignment-tension-plate{transform:none}
   .spine-alignment .alignment-tension-plate figcaption{width:100%;font-size:12px}
+  .spine-alignment .alignment-tension-plate figcaption span:nth-child(1){left:23.5%}
+  .spine-alignment .alignment-tension-plate figcaption span:nth-child(2){left:55%}
+  .spine-alignment .alignment-tension-plate figcaption span:nth-child(3){left:87%}
   .spine-alignment .alignment-practice{height:auto;justify-content:flex-start}
   .spine-alignment .alignment-practice h3{font-size:24px;transform:none}
   .spine-alignment .alignment-practice-illustrations{grid-template-columns:1fr;gap:18px;transform:none}
