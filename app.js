@@ -45,6 +45,15 @@ somaticAwarenessSections[5]=`<div class="somatic-course-library" aria-label="身
       <p>從身體的連結出發，探索動作如何牽動全身，感受身體不同部位之間的回應。</p>
     </div>
   </a>
+  <a class="somatic-course-card somatic-course-card--available" href="#/somatic-awareness/spine-awareness" aria-label="查看課程：脊椎感知與身體排列">
+    <div class="somatic-course-card-media">
+      <img src="./assets/spine-awareness-course-cover.png" alt="脊椎感知與身體排列" width="1536" height="1024" />
+    </div>
+    <div class="somatic-course-card-body">
+      <h3>脊椎感知與身體排列</h3>
+      <p>從脊椎的感知出發，探索動作、重量與身體排列之間的關係。</p>
+    </div>
+  </a>
   ${Array.from({length:3},(_,index)=>`<article class="somatic-course-card somatic-course-card--placeholder" aria-label="課程 Placeholder ${index+1}">
     <div class="somatic-course-card-media somatic-course-card-placeholder-image" aria-hidden="true"><span>Placeholder</span></div>
     <div class="somatic-course-card-body">
