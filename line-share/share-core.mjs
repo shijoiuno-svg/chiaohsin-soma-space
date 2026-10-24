@@ -20,6 +20,11 @@ export function shareResultStatus(result) {
   return result?.status === 'success' ? 'success' : 'cancelled';
 }
 
+export async function initializeLiffAndReadDeck({liff, liffId, location}) {
+  await liff.init({liffId, withLoginOnExternalBrowser: true});
+  return parseDeckId(location.search);
+}
+
 export function createSharePickerFlow({liff, messages}) {
   let state = 'idle';
 

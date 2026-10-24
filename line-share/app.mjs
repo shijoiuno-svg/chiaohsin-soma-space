@@ -1,11 +1,10 @@
 import {LIFF_ID} from './liff-config.mjs';
-import {UNKNOWN_DECK_MESSAGE, createSharePickerFlow, isConfiguredLiffId, parseDeckId} from './share-core.mjs';
+import {UNKNOWN_DECK_MESSAGE, createSharePickerFlow, initializeLiffAndReadDeck, isConfiguredLiffId} from './share-core.mjs';
 import {UnknownDeckError, makeShareMessages} from './share-message.mjs';
 
 const panelElement = document.querySelector('#share-panel');
 const statusElement = document.querySelector('#status');
 const shareButton = document.querySelector('#share-button');
-const deckId = parseDeckId(window.location.search);
 let shareFlow = null;
 
 function setState(message, {mode = 'detail', showButton = false, disabled = false, buttonLabel = '重新嘗試'} = {}) {
@@ -39,13 +38,25 @@ async function openShareTargetPicker() {
 }
 
 async function start() {
-  if (!deckId) {
-    setState(UNKNOWN_DECK_MESSAGE, {showButton: false});
+  if (!isConfiguredLiffId(LIFF_ID)) {
+    setState('分享功能尚未完成設定，請稍後再試。', {showButton: false});
     return;
   }
 
-  if (!isConfiguredLiffId(LIFF_ID)) {
-    setState('分享功能尚未完成設定，請稍後再試。', {showButton: false});
+  let deckId;
+  try {
+    deckId = await initializeLiffAndReadDeck({
+      liff: window.liff,
+      liffId: LIFF_ID,
+      location: window.location
+    });
+  } catch {
+    setState('分享功能初始化失敗，請稍後再試。', {showButton: false});
+    return;
+  }
+
+  if (!deckId) {
+    setState(UNKNOWN_DECK_MESSAGE, {showButton: false});
     return;
   }
 
@@ -61,13 +72,12 @@ async function start() {
   }
 
   try {
-    await window.liff.init({liffId: LIFF_ID, withLoginOnExternalBrowser: true});
     if (!window.liff.isLoggedIn()) {
       window.liff.login({redirectUri: window.location.href});
       return;
     }
     if (!window.liff.isApiAvailable('shareTargetPicker')) {
-      setState('此環境不支援好友分享，請在最新版 LINE 中重新開啟。', {showButton: false});
+      setState('此瀏覽器目前無法開啟 LINE 好友選擇器，請回到 LINE 從「分享給好友」重新開啟。', {showButton: false});
       return;
     }
     await openShareTargetPicker();
