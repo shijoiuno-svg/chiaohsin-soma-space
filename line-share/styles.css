@@ -26,6 +26,25 @@ body {
   text-align: center;
 }
 
+.share-panel[data-mode="loading"] {
+  padding: 10px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.share-panel[data-mode="loading"] .mark,
+.share-panel[data-mode="loading"] h1,
+.share-panel[data-mode="loading"] .privacy-note {
+  display: none;
+}
+
+.share-panel[data-mode="loading"] .status {
+  min-height: 0;
+  margin: 0;
+  color: #66736e;
+  font-size: 14px;
+}
+
 .mark {
   width: 52px;
   height: 52px;
