@@ -90,3 +90,7 @@ body{font-family:"Noto Serif TC","PingFang TC","Microsoft JhengHei",Georgia,seri
 .scenery-reader{position:relative}.scenery-arrow{position:absolute;z-index:3;top:calc(50% - 18px);width:38px;height:38px;display:grid;place-items:center;border:1px solid rgba(184,170,209,.72);border-radius:50%;background:rgba(255,255,255,.88);color:var(--purple);font-family:var(--serif);font-size:17px;cursor:pointer}.scenery-prev{left:16px}.scenery-next{right:16px}.scenery-arrow:disabled{opacity:.28;cursor:default}.scenery-dots{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:14px}.scenery-dots button{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:rgba(184,170,209,.5);cursor:pointer;transition:transform .2s ease,background-color .2s ease}.scenery-dots button.active{background:var(--purple);transform:scale(1.28)}.scenery-dots button:focus-visible{outline:1px solid var(--purple);outline-offset:4px}
 @media(max-width:760px){.scenery-arrow{display:none}.scenery-dots{margin-top:12px;gap:9px}.scenery-dots button{width:7px;height:7px}}
 
+
+/* Keep the myofascial magazine's typography stable in embedded mobile WebViews. */
+.magazine{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media(max-width:760px){#title-01{margin-inline:-22px}.hero-copy .title-line{display:inline;white-space:normal}.hero-intro br{display:none}}
