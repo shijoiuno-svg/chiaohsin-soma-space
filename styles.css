@@ -169,6 +169,18 @@ body.is-myofascial-magazine-route .site-footer{display:none}
 body.is-course-magazine-route{overflow:hidden}
 body.is-course-magazine-route .site-header{display:none}
 body.is-course-magazine-route .site-footer{display:none}
+
+/* Footer utility navigation. */
+.site-footer>.footer-shell{padding-top:2.35rem;gap:1.35rem}
+.footer-navigation{display:flex;width:min(calc(100% - 2rem),42rem);align-items:center;justify-content:center;flex-wrap:nowrap;border-block:0}
+.footer-navigation a{position:relative;display:inline-flex;align-items:center;justify-content:center;padding:.72rem 1.15rem;border-radius:.45rem;color:var(--muted);font-family:system-ui,sans-serif;font-size:1.1875rem;font-weight:600;line-height:1.5;text-decoration:none;white-space:nowrap;transition:color .15s ease,background-color .15s ease}
+.footer-navigation a+a::before{content:"";position:absolute;left:0;top:50%;width:1px;height:1rem;background:var(--line);transform:translateY(-50%)}
+.footer-navigation a:hover{background:rgba(220,231,215,.5);color:#1E3A2E}
+.footer-navigation a:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+body.is-contact-route .site-footer{margin-top:2rem}
+.site-footer .footer-divider,.footer-navigation+.footer-socials{border-top:0;border-bottom:0}
+.site-footer .footer-divider{display:none}
+@media(max-width:600px){.site-footer>.footer-shell{padding:1.6rem 0 1.85rem;gap:1.15rem}.footer-navigation{width:calc(100% - 1.5rem);border-block:0}.footer-navigation a{flex:1 1 0;padding:.68rem .15rem;border-radius:.35rem;font-size:1.0625rem;font-weight:500}.footer-navigation+.footer-socials{border-top:0;border-bottom:0}}
 .spine-magazine-route{height:100dvh;min-height:0;background:#f5f1e9}
 .spine-magazine-route iframe{display:block;width:100%;height:100%;border:0;background:#f5f1e9}
 
