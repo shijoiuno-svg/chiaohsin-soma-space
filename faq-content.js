@@ -264,13 +264,17 @@ window.FAQ_CONTENT = [
         number: '03',
         label: '最新消息與聯絡方式',
         question: '如何收到最新消息或聯絡喬馨？',
-        related: '沒有加入 LINE 好友，也可以瀏覽網站內容嗎？如何收到最新課程與活動消息？如果有其他問題，如何聯絡喬馨？',
-        answer: `<p>不需要加入 LINE 好友，也可以自由瀏覽喬馨身體空間網站上的課程介紹、文章與其他公開內容。</p>
-          <p>想了解近期開放的課程與活動，可以前往網站的「正在發生」頁面；也歡迎加入 LINE 官方帳號，接收最新消息與活動資訊。</p>
-          <div class="faq-actions"><a class="button" href="#/now-growing">查看正在發生</a><a class="button" href="https://lin.ee/VWvZiEww" target="_blank" rel="noopener noreferrer">加入 LINE</a></div>
+        related: '如何查看最新課程與活動？如何發現新的探索內容？如果有其他問題，如何聯絡喬馨？',
+        answer: `<h4 class="faq-answer-subheading"><span class="faq-answer-q" aria-hidden="true">Q</span><span>如何查看最新課程與活動？</span></h4>
+          <p>近期開放的課程、工作坊與活動，可以前往網站的「正在發生」查看。</p>
+          <div class="faq-actions"><a class="button" href="#/now-growing">查看正在發生</a></div>
+          <h4 class="faq-answer-subheading"><span class="faq-answer-q" aria-hidden="true">Q</span><span>如何發現新的探索內容？</span></h4>
+          <p>「旅人情報」會精選值得探索的文章、影音、自主練習與創作內容，讓旅人發現更多探索方向。</p>
+          <p>未來可以透過網站或 LINE 的「旅人情報」入口，發現新的探索內容。</p>
           <h4 class="faq-answer-subheading"><span class="faq-answer-q" aria-hidden="true">Q</span><span>如果有其他問題，如何聯絡喬馨？</span></h4>
-          <p>可以透過 LINE 官方帳號或 Email 聯繫喬馨。</p>
-          <div class="faq-actions"><a class="button" href="mailto:shijoiuno@gmail.com">寫信給喬馨</a></div>
+          <p>可以透過 LINE 官方帳號或 Email 聯繫喬馨。加入 LINE 官方帳號，也可以接收最新消息與活動資訊。</p>
+          <div class="faq-actions"><a class="button" href="${window.CONTACT_EMAIL.href}">寫信給喬馨</a><a class="button" href="https://lin.ee/VWvZiEww" target="_blank" rel="noopener noreferrer">加入 LINE</a></div>
+          <p>為了方便了解與回覆，聯絡時可以提供以下資訊：</p>
           <div class="faq-contact-details">
             <p><strong>稱呼：</strong></p>
             <p><strong>詢問類別：</strong> 課程與學習／合作邀約／其他</p>
