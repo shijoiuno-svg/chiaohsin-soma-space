@@ -1,5 +1,46 @@
 (() => {
   const state = { category: 0, openQuestion: null };
+  const FAQ_ROUTE = '#/faq';
+
+  function requestedItemId() {
+    const query = location.hash.split('?')[1];
+    return query ? new URLSearchParams(query).get('item') : null;
+  }
+
+  function findItemById(itemId) {
+    if (!itemId) return null;
+    for (let categoryIndex = 0; categoryIndex < window.FAQ_CONTENT.length; categoryIndex += 1) {
+      const category = window.FAQ_CONTENT[categoryIndex];
+      const questionIndex = category.items.findIndex(item => item.id === itemId);
+      if (questionIndex !== -1) {
+        return { categoryIndex, questionIndex, item: category.items[questionIndex] };
+      }
+    }
+    return null;
+  }
+
+  function replaceFaqUrl(itemId = null) {
+    const query = location.hash.split('?')[1] || '';
+    const params = new URLSearchParams(query);
+    if (itemId) params.set('item', itemId);
+    else params.delete('item');
+    const nextQuery = params.toString();
+    history.replaceState(null, '', `${FAQ_ROUTE}${nextQuery ? `?${nextQuery}` : ''}`);
+  }
+
+  function scheduleDeepLinkScroll(itemId) {
+    if (!itemId) return;
+    const scrollToItem = () => {
+      const item = document.getElementById(`faq-item-${itemId}`);
+      if (!item) return;
+      const previousScrollBehavior = document.documentElement.style.scrollBehavior;
+      document.documentElement.style.scrollBehavior = 'auto';
+      item.scrollIntoView({ behavior: 'auto', block: 'start' });
+      document.documentElement.style.scrollBehavior = previousScrollBehavior;
+    };
+    requestAnimationFrame(() => requestAnimationFrame(scrollToItem));
+    setTimeout(scrollToItem, 120);
+  }
 
   const chevron = expanded => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path>${expanded ? '' : '<path d="M12 5v14"></path>'}</svg>`;
 
@@ -13,7 +54,7 @@
 
   function renderQuestion(item, index, categoryId) {
     const expanded = state.openQuestion === index;
-    const answerId = `faq-answer-${categoryId}-${index}`;
+    const answerId = `faq-answer-${item.id}`;
     const questionCopy = `<span class="faq-question-copy faq-question-copy--pill">
       <span class="faq-question-number">${item.number}</span>
       <span class="faq-question-prompt-group">
@@ -21,7 +62,7 @@
         ${item.related ? `<span class="faq-related">${item.related}</span>` : ''}
       </span>
     </span>`;
-    return `<article class="faq-item${expanded ? ' is-open' : ''}">
+    return `<article class="faq-item${expanded ? ' is-open' : ''}" id="faq-item-${item.id}" data-faq-item="${item.id}">
       <h3 class="faq-question-heading">
         <button class="faq-question" type="button" aria-expanded="${expanded}" aria-controls="${answerId}" data-faq-question="${index}">
           ${questionCopy}
@@ -62,8 +103,12 @@
   }
 
   window.renderFaqPage = () => {
-    state.category = 0;
-    state.openQuestion = null;
+    const itemId = requestedItemId();
+    const selection = findItemById(itemId);
+    state.category = selection?.categoryIndex ?? 0;
+    state.openQuestion = selection?.questionIndex ?? null;
+    if (itemId && !selection) replaceFaqUrl();
+    if (selection) scheduleDeepLinkScroll(selection.item.id);
     return `<section class="section faq-page">
       <div class="section-shell">
         <div class="heading faq-page-heading"><span class="eyebrow eyebrow-strong">FAQ</span><h1>常見問題</h1><p class="lead">從課程選擇、參與方式到上課準備，找到你開始探索前想知道的事。</p></div>
@@ -80,6 +125,7 @@
       if (nextCategory !== state.category) {
         state.category = nextCategory;
         state.openQuestion = null;
+        replaceFaqUrl();
         updateCategories();
         updatePanel();
       }
@@ -89,8 +135,12 @@
     const questionButton = event.target.closest('[data-faq-question]');
     if (!questionButton) return;
     const questionIndex = Number(questionButton.dataset.faqQuestion);
+    const item = window.FAQ_CONTENT[state.category]?.items[questionIndex];
+    if (!item) return;
     const buttonTop = questionButton.getBoundingClientRect().top;
-    state.openQuestion = state.openQuestion === questionIndex ? null : questionIndex;
+    const willOpen = state.openQuestion !== questionIndex;
+    state.openQuestion = willOpen ? questionIndex : null;
+    replaceFaqUrl(willOpen ? item.id : null);
     updatePanel(questionIndex, buttonTop);
   });
 })();

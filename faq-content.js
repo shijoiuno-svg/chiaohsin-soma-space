@@ -5,6 +5,7 @@ window.FAQ_CONTENT = [
     prompt: '這裡適合我嗎？',
     items: [
       {
+        id: 'course-eligibility',
         number: '01',
         label: '參與條件',
         question: '我適合參加嗎？',
@@ -15,6 +16,7 @@ window.FAQ_CONTENT = [
           <p>如果有特殊的身體狀況或活動限制，建議先與喬馨聯繫，確認課程是否適合。</p>`
       },
       {
+        id: 'course-overview',
         number: '02',
         label: '課程特色',
         question: '這裡的課程在做什麼？',
@@ -26,6 +28,7 @@ window.FAQ_CONTENT = [
           <p><strong>舞蹈劇場</strong>分為表演與創作兩個方向，不需要事先具備舞蹈或創作經驗。課程最後會安排學員之間的成果呈現與交流，不需要面對外部觀眾演出。</p>`
       },
       {
+        id: 'course-starting-point',
         number: '03',
         label: '課程選擇',
         question: '我可以從哪裡開始？',
@@ -45,6 +48,7 @@ window.FAQ_CONTENT = [
     prompt: '課程怎麼安排？',
     items: [
       {
+        id: 'participation-formats',
         number: '01',
         label: '參與形式',
         question: '我可以怎麼參加課程？',
@@ -56,6 +60,7 @@ window.FAQ_CONTENT = [
           <p>課程形式也會依照不同主題與學習目標彈性安排，實際資訊以各場次公告為準。</p>`
       },
       {
+        id: 'joining-in-progress',
         number: '02',
         label: '參與安排',
         question: '課程可以隨時加入嗎？',
@@ -70,6 +75,7 @@ window.FAQ_CONTENT = [
           <p>如果課程已經額滿，原則上不再開放中途參與。實際名額與報名資訊，請參考各課程公告。</p>`
       },
       {
+        id: 'class-location',
         number: '03',
         label: '時間與地點',
         question: '我要去哪裡上課？',
@@ -86,6 +92,7 @@ window.FAQ_CONTENT = [
     prompt: '如何報名？優惠與退費呢？',
     items: [
       {
+        id: 'registration-process',
         number: '01',
         label: '報名與付款',
         question: '我要如何報名課程？',
@@ -103,6 +110,7 @@ window.FAQ_CONTENT = [
           <div class="faq-actions"><a class="button" href="#/now-growing">查看正在發生</a></div>`
       },
       {
+        id: 'course-discounts',
         number: '02',
         label: '優惠與費用',
         question: '參加課程有哪些優惠？',
@@ -112,6 +120,7 @@ window.FAQ_CONTENT = [
           <div class="faq-actions"><a class="button" href="https://lin.ee/VWvZiEww" target="_blank" rel="noopener noreferrer">加入 LINE</a></div>`
       },
       {
+        id: 'changes-and-refunds',
         number: '03',
         label: '異動與退費',
         question: '報名後如果計畫有變，該怎麼辦？',
@@ -135,6 +144,7 @@ window.FAQ_CONTENT = [
     prompt: '第一次來要注意什麼？',
     items: [
       {
+        id: 'class-preparation',
         number: '01',
         label: '穿著與攜帶物品',
         question: '第一次來上課，需要準備什麼？',
@@ -148,6 +158,7 @@ window.FAQ_CONTENT = [
           <p>如有需要另外準備的瑜伽墊、教具或其他物品，會在課前通知。</p>`
       },
       {
+        id: 'health-conditions',
         number: '02',
         label: '身體狀況與調整',
         question: '身體有特殊狀況，也可以參加嗎？',
@@ -167,6 +178,7 @@ window.FAQ_CONTENT = [
           <p>如果出現疼痛、頭暈或其他明顯不適，請停止練習並告知喬馨。</p>`
       },
       {
+        id: 'touch-and-partner-work',
         number: '03',
         label: '身體接觸與互動',
         question: '課程中會有身體接觸或雙人練習嗎？',
@@ -186,6 +198,7 @@ window.FAQ_CONTENT = [
     prompt: '這裡怎麼教學？',
     items: [
       {
+        id: 'movement-learning',
         number: '01',
         label: '動作學習與探索',
         question: '課程中的動作要怎麼學習？',
@@ -204,6 +217,7 @@ window.FAQ_CONTENT = [
           <p>如果練習中遇到困難，也可以主動告訴喬馨，一起尋找適合的練習方式。</p>`
       },
       {
+        id: 'learning-activities',
         number: '02',
         label: '課堂交流與學習安排',
         question: '課程中的學習活動是如何安排的？',
@@ -217,6 +231,7 @@ window.FAQ_CONTENT = [
           <p>舞蹈劇場系列包含表演與創作兩個方向，課程通常會在最後安排成果呈現，讓學員分享學習與創作的成果。這屬於課程內部的學習活動，並非對外公開演出。</p>`
       },
       {
+        id: 'professional-scope',
         number: '03',
         label: '課程定位與專業界線',
         question: '這裡的課程是身心療癒或復健課程嗎？',
@@ -233,6 +248,7 @@ window.FAQ_CONTENT = [
     prompt: '還能怎麼探索與聯繫？',
     items: [
       {
+        id: 'body-exploration-passport',
         number: '01',
         label: '認識身體探索護照',
         question: '什麼是身體探索護照？',
@@ -245,6 +261,7 @@ window.FAQ_CONTENT = [
           <p>身體探索護照免費開放。若涉及付費課程或活動，相關費用會另外說明。</p>`
       },
       {
+        id: 'exploration-badges',
         number: '02',
         label: '探索徽章與紀錄',
         question: '什麼是探索徽章？',
@@ -261,6 +278,7 @@ window.FAQ_CONTENT = [
           <p>不會。同一門課程即使在不同日期或場次重複參加，每位旅人也只會獲得一次對應徽章。</p>`
       },
       {
+        id: 'updates-and-contact',
         number: '03',
         label: '最新消息與聯絡方式',
         question: '如何收到最新消息或聯絡喬馨？',

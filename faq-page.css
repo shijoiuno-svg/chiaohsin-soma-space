@@ -14,7 +14,7 @@
 .faq-panel-heading span{display:block;color:var(--clay);font-family:system-ui,sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.12em}
 .faq-panel-heading h2{margin:.35rem 0 0;font-size:clamp(1.65rem,1.35rem + 1.2vw,2.4rem);font-weight:650;line-height:1.45}
 .faq-list{display:grid;gap:.85rem}
-.faq-item{overflow:hidden;border:1px solid var(--line);border-radius:1rem;background:rgba(255,253,248,.58)}
+.faq-item{overflow:hidden;scroll-margin-top:calc(76px + 1rem);border:1px solid var(--line);border-radius:1rem;background:rgba(255,253,248,.58)}
 .faq-item.is-open{background:rgba(255,253,248,.82)}
 .faq-question-heading{margin:0;font-size:inherit}
 .faq-question{display:flex;width:100%;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.2rem 1.3rem;border:0;background:transparent;color:var(--ink);font:inherit;text-align:left;cursor:pointer}
