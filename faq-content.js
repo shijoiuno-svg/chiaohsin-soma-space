@@ -281,16 +281,15 @@ window.FAQ_CONTENT = [
         id: 'updates-and-contact',
         number: '03',
         label: '最新消息與聯絡方式',
-        question: '如何收到最新消息或聯絡喬馨？',
-        related: '如何查看最新課程與活動？如何發現新的探索內容？如果有其他問題，如何聯絡喬馨？',
-        answer: `<h4 class="faq-answer-subheading"><span class="faq-answer-q" aria-hidden="true">Q</span><span>如何查看最新課程與活動？</span></h4>
-          <p>近期開放的課程、工作坊與活動，可以前往網站的「正在發生」查看。</p>
-          <div class="faq-actions"><a class="button" href="#/now-growing">查看正在發生</a></div>
-          <h4 class="faq-answer-subheading"><span class="faq-answer-q" aria-hidden="true">Q</span><span>如何發現新的探索內容？</span></h4>
-          <p>「旅人情報」會精選值得探索的文章、影音、自主練習與創作內容，讓旅人發現更多探索方向。</p>
-          <p>未來可以透過網站或 LINE 的「旅人情報」入口，發現新的探索內容。</p>
+        question: '如何發現新的探索內容或聯絡喬馨？',
+        related: '什麼是旅人情報？怎麼查看最新的旅人情報？如果有其他問題，如何聯絡喬馨？',
+        answer: `<h4 class="faq-answer-subheading"><span class="faq-answer-q" aria-hidden="true">Q</span><span>什麼是旅人情報？</span></h4>
+          <p>「旅人情報」是一座探索內容的情報站，將精選值得探索的文章、影音、自主練習與創作內容，邀請旅人從不同方向出發，持續發現身體探索的可能性。</p>
+          <h4 class="faq-answer-subheading"><span class="faq-answer-q" aria-hidden="true">Q</span><span>怎麼查看最新的旅人情報？</span></h4>
+          <p>「旅人情報」目前仍在籌備中。未來開放後，可以透過網站或 LINE 官方帳號中的「旅人情報」入口，查看最新收錄的探索內容。</p>
+          <p>相關入口將在功能正式開放後提供。</p>
           <h4 class="faq-answer-subheading"><span class="faq-answer-q" aria-hidden="true">Q</span><span>如果有其他問題，如何聯絡喬馨？</span></h4>
-          <p>可以透過 LINE 官方帳號或 Email 聯繫喬馨。加入 LINE 官方帳號，也可以接收最新消息與活動資訊。</p>
+          <p>可以透過 LINE 官方帳號或 Email 聯繫喬馨。</p>
           <div class="faq-actions"><a class="button" href="${window.CONTACT_EMAIL.href}">寫信給喬馨</a><a class="button" href="https://lin.ee/VWvZiEww" target="_blank" rel="noopener noreferrer">加入 LINE</a></div>
           <p>為了方便了解與回覆，聯絡時可以提供以下資訊：</p>
           <div class="faq-contact-details">
