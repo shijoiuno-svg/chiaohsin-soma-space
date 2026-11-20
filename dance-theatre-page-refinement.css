@@ -3,6 +3,9 @@
   width:min(100%,50rem);
   max-width:50rem;
 }
+@media(min-width:901px){
+  .dance-theatre-intro > p:first-child{margin-bottom:0}
+}
 .dance-theatre-keep{white-space:nowrap}
 
 .dance-theatre-directions.dance-theatre-directions-two{

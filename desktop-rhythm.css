@@ -7,6 +7,8 @@
     --desktop-opening-space: 56px;
     --desktop-section-space: 64px;
     --desktop-heading-gap: 26px;
+    --desktop-home-hero-space: clamp(3.5rem, calc(60vh - 19rem), 7rem);
+    --desktop-home-hero-bottom-extra: clamp(0rem, calc(120vh - 45rem), 7rem);
   }
 
   /* Keep the existing logo, brand and navigation sizing; only trim the shell. */
@@ -26,9 +28,12 @@
     padding-top: var(--desktop-opening-space);
   }
 
-  .hero {
-    padding-top: var(--desktop-opening-space);
-    padding-bottom: var(--desktop-section-space);
+  main > .hero {
+    padding-top: var(--desktop-home-hero-space);
+    padding-bottom: calc(
+      var(--desktop-home-hero-space) +
+      var(--desktop-home-hero-bottom-extra)
+    );
   }
 
   .heading,
@@ -39,6 +44,15 @@
   /* Preserve page-specific sections that were already intentionally tighter. */
   .about-page-hero {
     padding-bottom: 2.75rem;
+  }
+
+  /* Match the Journey title-only hero to the approved About proportions. */
+  main > .journey-inpage-nav + .section {
+    padding-bottom: 2.75rem;
+  }
+
+  main > .journey-inpage-nav + .section .heading {
+    margin-bottom: 0;
   }
 
   /* About uses the shared rhythm while retaining its editorial composition. */
@@ -157,5 +171,13 @@
   #events,
   #past {
     scroll-margin-top: calc(var(--desktop-header-height) + 1rem);
+  }
+}
+
+@media (min-width: 901px) and (min-height: 694px) {
+  /* Keep the current composition at the top; place any viewport fill below it. */
+  main > .hero {
+    min-height: calc(100vh - var(--desktop-header-height));
+    align-content: start;
   }
 }
