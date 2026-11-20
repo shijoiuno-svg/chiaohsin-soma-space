@@ -1,0 +1,161 @@
+/* Desktop Rhythm V1 — shared vertical rhythm for desktop layouts only. */
+@media (min-width: 901px) {
+  :root {
+    --desktop-header-height: 72px;
+    --desktop-inpage-nav-min-height: 44px;
+    --desktop-inpage-nav-scroll-clearance: 52px;
+    --desktop-opening-space: 56px;
+    --desktop-section-space: 64px;
+    --desktop-heading-gap: 26px;
+  }
+
+  /* Keep the existing logo, brand and navigation sizing; only trim the shell. */
+  .nav-shell {
+    min-height: 71px;
+  }
+
+  /* Shared page rhythm. */
+  .section {
+    padding-top: var(--desktop-section-space);
+    padding-bottom: var(--desktop-section-space);
+  }
+
+  main > .section:first-child:not(.hero),
+  main > .inpage-nav + .section,
+  .about-page > .about-page-hero {
+    padding-top: var(--desktop-opening-space);
+  }
+
+  .hero {
+    padding-top: var(--desktop-opening-space);
+    padding-bottom: var(--desktop-section-space);
+  }
+
+  .heading,
+  .contact-page .heading {
+    margin-bottom: var(--desktop-heading-gap);
+  }
+
+  /* Preserve page-specific sections that were already intentionally tighter. */
+  .about-page-hero {
+    padding-bottom: 2.75rem;
+  }
+
+  /* About uses the shared rhythm while retaining its editorial composition. */
+  .about-page .about-section-heading {
+    margin-bottom: var(--desktop-heading-gap);
+  }
+
+  .about-profile-units {
+    row-gap: var(--desktop-section-space);
+  }
+
+  .about-journey-lead {
+    margin-top: 0;
+    margin-bottom: var(--desktop-opening-space);
+  }
+
+  .about-chapter {
+    padding-bottom: var(--desktop-opening-space);
+  }
+
+  .about-chapter + .about-chapter {
+    padding-top: var(--desktop-opening-space);
+  }
+
+  .contact-page {
+    padding-bottom: 2rem;
+  }
+
+  .now-growing-page .now-growing-hero {
+    margin-bottom: 0;
+  }
+
+  .now-growing-sections .heading {
+    margin-bottom: clamp(.8rem, 1.25vw, 1rem);
+  }
+
+  .faq-page {
+    padding-top: var(--desktop-opening-space);
+  }
+
+  /* The shared English eyebrow tier; colors, weight and tracking stay unchanged. */
+  .eyebrow {
+    font-size: .875rem;
+  }
+
+  /* Compact sticky chapter navigation while allowing Safari text to grow. */
+  .about-inpage-nav,
+  .journey-inpage-nav,
+  .course-topic-inpage-nav,
+  .now-growing-inpage-nav {
+    top: var(--desktop-header-height);
+    height: auto;
+    min-height: var(--desktop-inpage-nav-min-height);
+    padding-top: .35rem;
+    padding-bottom: .35rem;
+  }
+
+  body.is-desktop-long-read-route .inpage-nav {
+    top: var(--desktop-header-height);
+  }
+
+  body.is-desktop-long-read-route.is-site-header-collapsed .inpage-nav {
+    top: 0;
+  }
+
+  #introduction,
+  #journey,
+  #background,
+  #dance,
+  #injury,
+  #integration,
+  #creation,
+  #space,
+  #path,
+  #soma,
+  #practice,
+  #map,
+  #paths,
+  #course-intro,
+  #course-directions,
+  #course-features,
+  #course-audience,
+  #course-list {
+    scroll-margin-top: calc(
+      var(--desktop-header-height) +
+      var(--desktop-inpage-nav-scroll-clearance) +
+      1rem
+    );
+  }
+
+  body.is-desktop-long-read-route.is-site-header-collapsed #introduction,
+  body.is-desktop-long-read-route.is-site-header-collapsed #journey,
+  body.is-desktop-long-read-route.is-site-header-collapsed #background,
+  body.is-desktop-long-read-route.is-site-header-collapsed #dance,
+  body.is-desktop-long-read-route.is-site-header-collapsed #injury,
+  body.is-desktop-long-read-route.is-site-header-collapsed #integration,
+  body.is-desktop-long-read-route.is-site-header-collapsed #creation,
+  body.is-desktop-long-read-route.is-site-header-collapsed #space,
+  body.is-desktop-long-read-route.is-site-header-collapsed #path,
+  body.is-desktop-long-read-route.is-site-header-collapsed #soma,
+  body.is-desktop-long-read-route.is-site-header-collapsed #practice,
+  body.is-desktop-long-read-route.is-site-header-collapsed #map,
+  body.is-desktop-long-read-route.is-site-header-collapsed #paths,
+  body.is-desktop-long-read-route.is-site-header-collapsed #course-intro,
+  body.is-desktop-long-read-route.is-site-header-collapsed #course-directions,
+  body.is-desktop-long-read-route.is-site-header-collapsed #course-features,
+  body.is-desktop-long-read-route.is-site-header-collapsed #course-audience,
+  body.is-desktop-long-read-route.is-site-header-collapsed #course-list {
+    scroll-margin-top: calc(
+      var(--desktop-inpage-nav-scroll-clearance) +
+      1rem
+    );
+  }
+
+  #start,
+  #events,
+  #past {
+    scroll-margin-top: calc(var(--desktop-header-height) + 1rem);
+  }
+}
